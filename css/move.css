@@ -1,0 +1,37 @@
+.bhop{
+    margin: 20px;
+}
+
+
+.grid{
+    margin-top: 50px;
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    
+}
+
+.grid a{
+    font-size: 17px;
+
+    margin: 2px;
+    padding: 1px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #828886;
+    transition: all 0.4s;
+}
+
+.grid a:hover{
+    color: white;
+}
+
+.grid img{
+    border-radius: 7px;
+}
+
+.text{
+    margin-top: 150px;
+}
+
+

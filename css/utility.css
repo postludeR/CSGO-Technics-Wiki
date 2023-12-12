@@ -1,0 +1,102 @@
+.imgUt{
+    margin: 20px;
+}
+
+.eachUt{
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+
+.eachUt img{
+    transition: all 0.5s ease;
+}
+
+.eachUt:hover img{
+    transform: scale(1.1);
+}
+
+.eachUt:hover{
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%, #828886  80%);
+}
+
+.eachUt:hover h3{
+    color: #2f3b37;
+    margin:0 20px;
+    background: #828886;
+}
+
+.eachUt > h3{
+    transition: all 0.5s ease;
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%,  #2f3b37 80%);
+    margin:0 70px;
+    padding:3px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.eachUt{
+    display: inline-block;
+}
+
+.tutorials a{
+    font-family: "Courier New", serif;
+    transition: all 0.3s ease;
+    color: #828886;
+}
+
+.tutorials a:hover{
+    color: white;
+
+}
+
+.flash{
+    text-align: left;
+    margin: 40px 100px;
+}
+
+.flash p{
+    margin-left: 20px;
+}
+
+.flash > blockquote{
+    font-style: italic;
+    font-weight: bolder;
+    color: #828886;
+    margin: 20px 150px;
+    transition: all 0.5s ease;
+}
+
+.flash > blockquote:hover{
+    color: white;
+    transform: scale(1.05);
+}
+
+
+.flash > video{
+    margin-left:95px;
+}
+
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background: #828886;
+    margin-left: 80px;
+}
+
+.tHead{
+    background: #2f3b37;
+    color: #828886;
+    font-style: oblique;
+}
+
+table tr td{
+    border-bottom: 1px solid #2f3b37;
+    padding: 10px;
+}
+

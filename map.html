@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="csgo maps, csgo tutorials, csgomap, inferno, mirage, ancient, vertigo, dust2, ancient, nuke, Counter Strike:Global Offensive, CS:GO, csgo, csgo tutorial, csgo wiki, cs, Counter Strike, e-sports, esport, Major, ESL, video game, steam, s1mple, zyWoo, HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="Major maps of CS:GO Techniques wiki">
+    <meta name="author" content="postlude_">
+    
+    <title>CS:GO Techniques Wiki : Map</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link href="image/csgolg.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css">
+          
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <script src="js/map.js"></script>
+    
+</head>
+<body>
+<div class="nav">
+    <div class="Welcome"><img src="image/csgolg.png" alt="" width="15" height="15">&nbsp;<b>Welcome to CS:GO Techniques Wiki!</b></div>
+    <div class="division">&nbsp;</div>
+    <div class="horizontal">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="practice.html">Practice</a></li>
+            <li><a href="weapon.html">Weapon</a></li>
+            <li><a href="shoot.html">Shoot</a></li>
+            <li><a href="move.html">Move</a></li>
+            <li><a href="utility.html">Utility</a></li>
+            <li><a href="collected_data.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="description">
+    <h1>MAP</h1>
+    <h2>For those just starting out, this section contains an overview of the 7 major maps as well as simple utility tutorils. For those who are already familiar with the map, we also offer some tricks to improve their detailing skills. </h2>
+</div>
+
+
+<div class="select">
+    <img src="image/De_inferno.png" onclick="infer()" alt="infer" width="230" height="230">
+    <img src="image/De_mirage.png" onclick="mira()" alt="mira" width="230" height="230">
+    <img src="image/De_vertigo.png" onclick="verti()" alt="verti" width="230" height="230">
+    <img src="image/De_ancient.png" onclick="anci()" alt="verti" width="230" height="230">
+    <img src="image/De_overpass.png" onclick="op()" alt="op" width="230" height="230">
+    <img src="image/De_nuke.png" onclick="nuke()" alt="nuke" width="230" height="230">
+    <img src="image/De_dust2.png"  onclick="d2()" alt="dust2" width="230" height="230">
+    
+    
+    
+    <h1>Click the icon above to learn more</h1>
+
+    <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
+    </div>
+
+    <script>
+        var map = L.map('map').setView([40.841909, 14.304199], 9);
+
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+
+        var marker = L.marker([40.841909, 14.304199]).addTo(map);
+        var marker1 = L.marker([32.620924, -8.407974]).addTo(map);
+        var marker2 = L.marker([31.378371, 34.615173]).addTo(map);
+        var marker3 = L.marker([40.737421, -73.977127]).addTo(map);
+        var marker4 = L.marker([17.643342, -88.952059]).addTo(map);
+        var marker5 = L.marker([52.496517, 13.417053]).addTo(map);
+        var marker6 = L.marker([35.738431, -87.703857]).addTo(map);
+        
+
+        
+        
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+
+        
+        
+        L.Control.Zoom = L.Control.extend({
+            options: {
+                position:'topright', 
+                infer:'INFERNO',    
+                mirag:'MIRAGE',
+                verti:'VERTIGO',
+                ancit:'ANCIENT',
+                overp:'OVERPASS',
+                nukee:'NUKE',
+                dust2:'DUST2'
+                
+            },
+            onAdd:function(map){
+                var name = 'leaflet-control-zoom',
+                    container = L.DomUtil.create('div',name +'leaflet-bar'),
+                    options = this.options;
+                this._createButton(options.infer,name+'-in',container,this.infe);
+                this._createButton(options.mirag,name+'-in',container,this.mira);
+                this._createButton(options.verti,name+'-in',container,this.vert);
+                this._createButton(options.ancit,name+'-in',container,this.anci);
+                this._createButton(options.overp,name+'-in',container,this.over);
+                this._createButton(options.nukee,name+'-in',container,this.nuke);
+                this._createButton(options.dust2,name+'-in',container,this.dust);
+                return container;
+            },
+            
+            infe: function(e){
+                let center = L.latLng(40.841909, 14.304199);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+            
+            mira: function (e){
+                let center = L.latLng(32.620924, -8.407974);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+            
+            dust: function (e){
+                let center = L.latLng(31.378371, 34.615173);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+
+            vert: function (e){
+                let center = L.latLng(40.737421, -73.977127);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+
+            anci: function (e){
+                let center = L.latLng(17.643342, -88.952059);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+
+            over: function (e){
+                let center = L.latLng(52.496517, 13.417053);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+
+            nuke: function (e){
+                let center = L.latLng(35.738431, -87.703857);
+                this._map.setView(center);
+                this._map.setView(center, this.map.getZoom());
+            },
+            
+            
+            
+            _createButton:function(html,className,container,fn){
+                var link = L.DomUtil.create('a',className,container);
+                link.innerHTML = html;
+                link.href = '#';
+                L.DomEvent.on(link,'mousedown dblclick',L.DomEvent.stopPropagation)
+                    .on(link,'click',L.DomEvent.stop)
+                    .on(link,'click',fn,this)
+                    .on(link,'click',this._refocusOnMap,this);
+                return link;
+            }
+        });
+
+        L.control.zoom = function(options){
+            return new L.Control.Zoom(options);
+        };
+        L.control.zoom().addTo(map);
+    </script>
+
+    <h2>Real-World Location (Not Precise)</h2>
+</div>
+
+<hr>
+
+
+
+<div class="maps">
+    <div>
+        <img src="image/infer.png" alt="infer" width="630" height="630">
+        
+        <div>
+            <img src="image/inferR.jpg" alt="inferR" width="400" height="181">
+            
+            <div class="info">
+                <h2>de_inferno</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=jBqMZ4_oWt8&t=180s">YouTube</a></p>
+                        <p>Utility : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=4oebGvOXuFM">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.youtube.com/watch?v=sWlJiZJ9vU4">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_inferno.png" alt="inferR" width="180" height="180">
+            
+            
+        </div>
+
+        
+        
+    </div>
+
+    <hr>
+
+
+    <div>
+        <img src="image/mira.jpg" alt="mira" width="630" height="630">
+        
+        <div>
+            <img src="image/miraR.jpg" alt="miraR" width="400" height="181">
+            <div class="info">
+                <h2>de_mirage</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=3OZpEU77leU&t=88s">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=lxNxYLM37yg">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=QuT8iKMCTIs">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_mirage.png" alt="inferR" width="180" height="180">
+            
+        </div>
+        
+        
+    </div>
+
+    <hr>
+
+    <div>
+        <img src="image/verti.jpg" alt="verti" width="630" height="630">
+        <div>
+            <img src="image/vertiR.jpg" alt="vertiR" width="400" height="181">
+            <div class="info">
+                <h2>de_vertigo</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=WcVKN3RRevk">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=2q3mvE6rssU">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=55l0pPdi2xQ">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_vertigo.png" alt="inferR" width="180" height="180">
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <img src="image/anci.webp" alt="anci" width="630" height="630">
+        <div>
+            <img src="image/anciR.jpg" alt="anciR" width="400" height="181">
+            <div class="info">
+                <h2>de_ancient</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=CwtMPY5xRVQ&t=88s">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=AY8FL3eiRjE">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=g-Wa0hzT0i0">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_ancient.png" alt="inferR" width="180" height="180">
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <img src="image/op.png" alt="op" width="630" height="630">
+        <div>
+            <img src="image/opR.jpg" alt="opR" width="400" height="181">
+            <div class="info">
+                <h2>de_overpass</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=lQ17pCn4Cgo">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=soyWfCwNC5k">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=Oc1DtREwQ0g">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_overpass.png" alt="inferR" width="180" height="180">
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <img src="image/nk.jpg" alt="nk" width="630" height="630">
+        <div>
+            <img src="image/nukeR.jpg" alt="nkR" width="400" height="181">
+            <div class="info">
+                <h2>de_nuke</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=LL7EwOeSVJo">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=vOAiu2YgRlQ">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=tf4fBpb7FeA">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_nuke.png" alt="inferR" width="180" height="180">
+        </div>
+    </div>
+
+    <hr>
+    
+    <div>
+        <img src="image/d2.jpg" alt="d2" width="630" height="630">
+        <div>
+            <img src="image/dust2R.jpg" alt="d2r" width="400" height="181">
+            <div class="info">
+                <h2>de_dust2</h2>
+                <div class="subdiv">
+                    <div>
+                        <button class="submit" onclick="topFunction()">BACK TO TOP</button>
+                    </div>
+                    <div class="links">
+                        <p>Overview : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=nxMbNO9qlGw">YouTube</a></p>
+                        <p>Utility :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=SAwt8spLcU8">YouTube</a></p>
+                        <p>Tips & Tricks : &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=nGe7hTJtAXU">YouTube</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="image/De_dust2.png" alt="inferR" width="180" height="180">
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="newCome">
+    <h1>The new coming map de_tuscan...</h1>
+    <video controls width="550" height="325">
+        <source src="video/tuscan.mp4">
+    </video>
+</div>
+
+
+<div class="bottom">
+
+
+    <ul id="left">
+        <li><b><i>Links</i></b></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="weapon.html">Weapon</a></li>
+        <li><a href="shoot.html">Shoot</a></li>
+        <li><a href="move.html">Move</a></li>
+        <li><a href="utility.html">Utility</a></li>
+        <li><a href="collected_data.html">Contact</a></li>
+    </ul>
+
+    <button onclick="topFunction()"><b>BACK TO TOP</b></button>
+    <ul id="right">
+        <li><b><i>Contact</i></b></li>
+        <li><a href="mailto:nemopostlude@gmail.com">nemopostlude@gmail.com</a></li>
+        <li><a href="twitter.com">twitter.com/xxx</a></li>
+        <li><p></p></li>
+
+        <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fsfs-webdev.massey.ac.nz%2Fsite2236%2F158258%2Fass2%2Fmap.html" rel="nofollow" title="Validate as HTML5"><img
+                src="image/w3c.png" alt="htmlV" width="110" height="61"></a></li>
+
+
+        <li>
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsfs-webdev.massey.ac.nz%2Fsite2236%2F158258%2Fass2%2Fcss%2Findex.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=zh-cn">
+                <img src="image/vcss-blue.gif" alt="cssV"></a></li>
+    </ul>
+
+
+</div>
+
+</body>
+</html>

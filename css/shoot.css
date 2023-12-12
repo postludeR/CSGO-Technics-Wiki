@@ -1,0 +1,48 @@
+.video{
+    margin: 40px;
+    border-radius: 5px;
+}
+
+img{
+    border-radius: 5px;
+}
+
+.shoot a{
+    font-size: 14px;
+    
+    margin: 2px;
+    padding: 1px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #828886;
+    transition: all 0.4s;
+}
+
+.shoot a:hover{
+    color: white;
+}
+
+.grid{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    
+}
+
+.details{
+    margin-left: 50px;
+    margin-top: 20px;
+    text-align: left;
+    
+}
+
+.im{
+    margin-left: 350px;
+    transition: all 0.2s ease-in-out;
+}
+
+.im:hover{
+    transform: scale(1.1);
+}

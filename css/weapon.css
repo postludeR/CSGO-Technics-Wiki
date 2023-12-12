@@ -1,0 +1,122 @@
+
+.grid{
+    
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    height: 480px;
+}
+
+/*three part*/
+table{
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    border-spacing: 15px;
+}
+
+table tr td{
+    font-weight: bold;
+    font-family: "Courier New", serif;
+    font-style: italic;
+}
+
+.mainGraph{
+    margin-top: 80px;
+}
+
+.left{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.update{
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    font-size: 30px;
+    font-style: italic;
+    color: #828886; 
+    font-family:Courier New, serif
+    
+}
+/*three part*/
+
+.weapon{
+    padding: 4px;
+    text-align: left;
+    list-style-type: none;
+}
+
+.weapon ul {
+    list-style: none;
+    height: 0;
+    overflow: hidden;
+    transition:all 0.3s ease 0.3s;
+
+}
+
+.weapon ul li{
+    
+    font-size: 15px;
+    text-align: left;
+    padding: 3px;
+}
+
+.weapon:hover ul{
+    border: 2px;
+    height: 325px;
+    transition:all 0.3s ease 0.3s;
+}
+
+.data{
+    color: #828886;
+}
+
+.weapon:hover ul#smg{
+    height: 220px;
+    transition:all 0.3s ease 0.3s;
+}
+
+.weapon:hover ul#heavy{
+    height: 200px;
+    transition:all 0.3s ease 0.3s;
+}
+
+
+.type li {
+    font-style: italic;
+    padding: 8px 70px;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    margin-right: 10px;
+    transition:all 0.2s ease;
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%,  #2f3b37 80%);
+}
+
+.type li:hover{
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%, #828886  80%);
+    color: rgb(26,31,25);
+}
+
+
+.type ul li {
+    font-style: italic;
+    margin: 4px;
+    color: white;
+    background: rgba(0,0,0,0);
+    transition:all 0.2s ease;
+}
+
+.type ul li:hover{
+    background: rgba(0,0,0,0);
+    color: rgb(26,31,25);
+}
+
+
+
+

@@ -1,0 +1,170 @@
+img{
+    border-radius: 10px;
+}
+
+
+.select{
+    margin: 40px;
+}
+
+.select img{
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.3s;
+
+}
+
+.select img:hover{
+    transform: scale(1.1);
+}
+
+
+.select img:active{
+    transform: scale(1.05);
+}
+
+.select > h1 {
+    /*background: #828886;*/
+    /*background: linear-gradient(300deg,  rgb(26,31,25)  20%,  #2f3b37 80%);*/
+    /*padding:0 100px;*/
+    /*margin: 50px 175px;*/
+    font-size: 40px;
+    transition: all 0.3s;
+}
+
+
+
+#map{
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 500px;
+    width: 735px ;
+    border-radius: 10px;
+}
+
+#map a{
+    font-size: 14px;
+    background: white;
+    margin: 2px;
+    padding: 1px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2f3b37;
+    transition: all 0.4s;
+}
+
+#map a:hover{
+    color: #828886;
+}
+
+.maps > div{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    
+}
+
+.maps a{
+    color: #828886;
+    transition:  all 0.4s ease;
+    text-decoration: none;
+}
+
+.maps > div{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    margin: 40px
+}
+
+.maps > div > div > div{
+    transition: all 0.5s;
+    margin-bottom: 33px;
+    margin-top: 25px;
+    margin-left: 25px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%,  #2f3b37 80%);
+}
+
+.maps > div > div > div:hover{
+    background: linear-gradient(300deg,  rgb(26,31,25)  20%, #828886  80%);
+    color: rgb(26,31,25);
+}
+
+.maps > div > div > div:hover a{
+    color: white;
+}
+
+.maps > div > div > div:hover .submit{
+    color: white;
+}
+
+
+p#provide{
+    float: left;
+}
+
+
+
+.subdiv > div > p{
+    text-align: left;
+}
+
+.subdiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info > h2{
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.submit{
+    margin-top: 25px;
+    font-size: 15px;
+    height: 100px;
+    width: 150px;
+    color: #828886;
+    background: linear-gradient(315deg,  #2f3b37  0%, rgb(26,31,25) 80%);
+    border: none;
+    border-radius: 7px;
+    font-family: "Microsoft YaHei UI",  serif;
+    font-weight: 500;
+    outline: none;
+    position: relative;
+    z-index: 0;
+    transition: all 0.4s ease-in-out;
+    cursor:pointer;
+}
+
+.links{
+    margin-top: 5px;
+}
+
+
+
+.submit::before{
+    position:absolute;
+    content: '';
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom:0;
+    background:linear-gradient(315deg, rgb(26,31,25) 0%,#2f3b37 80%);
+    transition: all 0.35s ease;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.submit:hover::before{
+    top: 0;
+    height: 100%;
+}
+
+.submit:active{
+    top: 2px;
+}
+
+.newCome{
+    margin: 20px;
+}

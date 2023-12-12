@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="csgo tutorials, csgo weapon data, csgo awp , csgo ak, csgo m4a4, csgo usp, csgo weapons ,csgo shoot, Counter Strike:Global Offensive, CS:GO, csgo, csgo tutorial, csgo wiki, cs, Counter Strike, e-sports, esport, Major, ESL, video game, steam, s1mple, zyWoo, HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="Weapon data of CS:GO Techniques wiki">
+    <meta name="author" content="postlude_">
+
+    <title>CS:GO Techniques Wiki : Weapon</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/weapon.css">
+    <link href="image/csgolg.ico" rel="shortcut icon">
+    <script src = "js/weapon.js"></script>
+    <script src = "js/index.js"></script>
+</head>
+<body>
+<div class="nav">
+    <div class="Welcome"><img src="image/csgolg.png" alt="" width="15" height="15">&nbsp;<b>Welcome to CS:GO Techniques Wiki!</b></div>
+    <div class="division">&nbsp;</div>
+    <div class="horizontal">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="practice.html">Practice</a></li>
+            <li><a href="weapon.html">Weapon</a></li>
+            <li><a href="shoot.html">Shoot</a></li>
+            <li><a href="move.html">Move</a></li>
+            <li><a href="utility.html">Utility</a></li>
+            <li><a href="collected_data.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!--edit-->
+
+<div class="description">
+    <h1>WEAPON DATA</h1>
+    <h2>You can check all the important stats for all CS:GO weapons below, which is especially important for newcomers, especially some damage greater than 100, which means that the represented weapon has the ability to kill enemies with one shot. For high-level players, new gameplay understandings can be derived by analyzing data, such as gun-matching schemes and part-specific kills.</h2>
+</div>
+
+<div class="grid">
+    <div class="left">
+        <ul class="type">
+            <li class="weapon">Pistol
+                <ul>
+                    <li onclick="setInfo(this)">P2000</li>
+                    <li onclick="setInfo(this)">USP-S</li>
+                    <li onclick="setInfo(this)">Glock-18</li>
+                    <li onclick="setInfo(this)">P250</li>
+                    <li onclick="setInfo(this)">Five-Seven</li>
+                    <li onclick="setInfo(this)">Tec-9</li>
+                    <li onclick="setInfo(this)">CZ75</li>
+                    <li onclick="setInfo(this)">Dual Berettas</li>
+                    <li onclick="setInfo(this)">Desert Eagle</li>
+                    <li onclick="setInfo(this)">R8 Revolver</li>
+                </ul>
+            </li>
+            
+            <li class="weapon">Rifle
+                <ul>
+                    <li onclick="setInfo(this)">AK-47</li>
+                    <li onclick="setInfo(this)">M4A1-S</li>
+                    <li onclick="setInfo(this)">M4A4</li>
+                    <li onclick="setInfo(this)">FAMAS</li>
+                    <li onclick="setInfo(this)">Galil AR</li>
+                    <li onclick="setInfo(this)">AUG</li>
+                    <li onclick="setInfo(this)">SG 553</li>
+                    <li onclick="setInfo(this)">SSG 08</li>
+                    <li onclick="setInfo(this)">AWP</li>
+                    <li onclick="setInfo(this)">SCAR-20</li>
+                    <li onclick="setInfo(this)">G3SG1</li>
+                </ul>
+            </li>
+
+            <li class="weapon">SMG
+                <ul id="smg">
+                    <li onclick="setInfo(this)">MP9</li>
+                    <li onclick="setInfo(this)">MAC-10</li>
+                    <li onclick="setInfo(this)">PP-Bizon</li>
+                    <li onclick="setInfo(this)">MP7</li>
+                    <li onclick="setInfo(this)">UMP-45</li>
+                    <li onclick="setInfo(this)">P90</li>
+                    <li onclick="setInfo(this)">MP5-SD</li>
+                </ul>
+            </li>
+
+            <li class="weapon">Heavy 
+                <ul id="heavy">
+                    <li onclick="setInfo(this)">Nova</li>
+                    <li onclick="setInfo(this)">XM1014</li>
+                    <li onclick="setInfo(this)">MAG-7</li>
+                    <li onclick="setInfo(this)">Sawed-Off</li>
+                    <li onclick="setInfo(this)">M249</li>
+                    <li onclick="setInfo(this)">Negev</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div>
+        <img id="weaponImg" class="mainGraph" src="image/weapon/glock.webp" alt="400" width="300" >
+    </div>
+    
+    <div>
+        <table>
+            <tr>
+                <td class="data">Price</td>
+                <td id="price" >200$</td>
+            </tr>
+            <tr>
+                <td class="data">Ammo</td>
+                <td id="ammo">20/120</td>
+            </tr>
+            <tr>
+                <td class="data">Head/(kevlar)</td>
+                <td id="head">111/52</td>
+            </tr>
+            <tr>
+                <td class="data">Chest/(kevlar)</td>
+                <td id="chest">27/13</td>
+            </tr>
+            <tr>
+                <td class="data">Stomach/(kevlar)</td>
+                <td id="stomach">34/16</td>
+            </tr>
+            <tr>
+                <td class="data">Legs</td>
+                <td id="legs">20</td>
+            </tr>
+            <tr>
+                <td class="data">RPM</td>
+                <td id="rpm">400</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<p class="update">Update : 2022/3</p>
+<!--edit-->
+
+
+<div class = "bottom">
+
+
+    <ul id = "left">
+        <li><b><i>Links</i></b></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="weapon.html">Weapon</a></li>
+        <li><a href="shoot.html">Shoot</a></li>
+        <li><a href="move.html">Move</a></li>
+        <li><a href="utility.html">Utility</a></li>
+        <li><a href="collected_data.html">Contact</a></li>
+    </ul>
+
+    <button onclick= "topFunction()"><b>BACK TO TOP</b></button>
+    <ul id="right">
+        <li><b><i>Contact</i></b></li>
+        <li><a href="mailto:nemopostlude@gmail.com">nemopostlude@gmail.com</a></li>
+        <li><a href="twitter.com">twitter.com/xxx</a></li>
+        <li><p></p></li>
+
+        <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fsfs-webdev.massey.ac.nz%2Fsite2236%2F158258%2Fass2%2Fweapon.html" rel="nofollow" title="Validate as HTML5"><img
+                src="image/w3c.png" alt="htmlV" width="110" height="61"></a></li>
+
+
+        <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsfs-webdev.massey.ac.nz%2Fsite2236%2F158258%2Fass2%2Fcss%2Fweapon.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=zh-cn"><img
+                src="image/vcss-blue.gif" alt="cssV"></a></li>
+    </ul>
+
+
+</div>
+
+</body>
+</html>
