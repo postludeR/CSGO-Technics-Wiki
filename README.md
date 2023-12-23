@@ -1,4 +1,4 @@
-# CS:GO Techniques Wiki Report
+# CS:GO Techniques Wiki
 
 ### Links
 
